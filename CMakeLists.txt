@@ -11,6 +11,7 @@ find_package(nlohmann_json CONFIG REQUIRED)
 set(ALL_TARGETS
     prettify
     read_file
+    read_file_into_object
 )
 
 foreach(target ${ALL_TARGETS})
