@@ -1,0 +1,193 @@
+[
+    {
+      "category": "Starfighters",
+      "model": "T-65 X-Wing",
+      "manufacturer": "Incom Corporation",
+      "length": 13,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Starfighter",
+      "roles": [
+        "Space superiority starfighter",
+        "Escort"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "TIE/LN Starfighter",
+      "manufacturer": "Sienar Fleet Systems",
+      "length": 7,
+      "affiliation": "Empire",
+      "ship_class": "Starfighter",
+      "roles": [
+        "Space superiority starfighter"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "TIE/SA Bomber",
+      "manufacturer": "Sienar Fleet Systems",
+      "length": 8,
+      "affiliation": "Empire",
+      "ship_class": "Space/planetary bomber",
+      "roles": [
+        "Bomber"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "BTL Y-Wing",
+      "manufacturer": "Koensayr Manufacturing",
+      "length": 16,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Assault starfighter",
+      "roles": [
+        "Starfighter",
+        "Bomber",
+        "Escort",
+        "Scout",
+        "Courier",
+        "Shuttle"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "RZ-1 A-Wing Interceptor",
+      "manufacturer": "Alliance Underground Engineering",
+      "length": 10,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Starfighter",
+      "roles": [
+        "Interceptor"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "TIE/D Defender",
+      "manufacturer": "Sienar Fleet Systems",
+      "length": 9,
+      "affiliation": "Empire",
+      "ship_class": "Starfighter",
+      "roles": [
+        "Space superiority fighter",
+        "Interceptor",
+        "Light bomber"
+      ]
+    },
+    {
+      "category": "Starfighters",
+      "model": "TIE/IN Interceptor",
+      "manufacturer": "Sienar Fleet Systems",
+      "length": 10,
+      "affiliation": "Empire",
+      "ship_class": "Starfighter",
+      "roles": [
+        "Space superiority fighter",
+        "Interceptor"
+      ]
+    },
+    {
+      "category": "Capital Ships",
+      "model": "MC80 Liberty Type Star Cruiser",
+      "manufacturer": "Mon Calamari Shipyards",
+      "length": 1200,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Star Cruiser",
+      "roles": [
+        "Carrier",
+        "Destroyer"
+      ]
+    },
+    {
+      "category": "Capital Ships",
+      "model": "Imperial I-class Star Destroyer",
+      "manufacturer": "Kuat Drive Yards",
+      "length": 1600,
+      "affiliation": "Empire",
+      "ship_class": "Star Destroyer",
+      "roles": [
+        "Destroyer",
+        "Carrier",
+        "Military transport",
+        "Command ship"
+      ]
+    },
+    {
+      "category": "Capital Ships",
+      "model": "Imperial II-class Star Destroyer",
+      "manufacturer": "Kuat Drive Yards",
+      "length": 1600,
+      "affiliation": "Empire",
+      "ship_class": "Star Destroyer",
+      "roles": [
+        "Destroyer",
+        "Carrier",
+        "Military transport",
+        "Command ship"
+      ]
+    },
+    {
+      "category": "Escort Ships",
+      "model": "EF76 Nebulon-B Frigate",
+      "manufacturer": "Kuat Drive Yards",
+      "length": 300,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Frigate",
+      "roles": [
+        "Escort",
+        "Hospital ship"
+      ]
+    },
+    {
+      "category": "Escort Ships",
+      "model": "CR90 Corvette",
+      "manufacturer": "Corellian Engineering Corporation",
+      "length": 150,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Corvette",
+      "roles": [
+        "Escort",
+        "Transport"
+      ]
+    },
+    {
+      "category": "Transports",
+      "model": "YT-1300 Light Freighter",
+      "manufacturer": "Corellian Engineering Corporation",
+      "length": 35,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Light freighter",
+      "roles": [
+        "Transport",
+        "Freighter",
+        "Smuggling vessel"
+      ]
+    },
+    {
+      "category": "Transports",
+      "model": "Lambda-class T-4a Shuttle",
+      "manufacturer": "Sienar Fleet Systems",
+      "length": 20,
+      "affiliation": "Empire",
+      "ship_class": "Armed government transport shuttle",
+      "roles": [
+        "Personnel shuttle",
+        "Troop transport",
+        "Escape vessel"
+      ]
+    },
+    {
+      "category": "Transports",
+      "model": "GR-75 Medium Transport",
+      "manufacturer": "Gallofree Yards",
+      "length": 90,
+      "affiliation": "Rebel Alliance",
+      "ship_class": "Medium transport",
+      "roles": [
+        "Transport",
+        "Fuel tanker",
+        "Salvage ship",
+        "Landing craft",
+        "Hospital ship"
+      ]
+    }
+  ]
