@@ -1,5 +1,7 @@
 # C++ JSON Examples
 
+![CI](https://github.com/Toxe/test-cpp-json/workflows/CI/badge.svg)
+
 ## Dependencies
 
 - CMake
