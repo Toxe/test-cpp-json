@@ -15,18 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: brew install ninja
-      - name: Install Vcpkg
-        run: |
-          cd $HOME
-          git clone --depth 1 https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh --disableMetrics
-          ./vcpkg install $(< $GITHUB_WORKSPACE/.vcpkg)
-      - name: Build Project
-        run: |
-          mkdir build && cd build
-          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake ..
-          cmake --build .
+      - run: /bin/bash .ci/install-vcpkg.sh "$GITHUB_WORKSPACE"
+      - run: /bin/bash .ci/build-project.sh
 
   osx-gcc:
     name: macOS GCC
@@ -37,18 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: brew install ninja
-      - name: Install Vcpkg
-        run: |
-          cd $HOME
-          git clone --depth 1 https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh --disableMetrics
-          ./vcpkg install $(< $GITHUB_WORKSPACE/.vcpkg)
-      - name: Build Project
-        run: |
-          mkdir build && cd build
-          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake ..
-          cmake --build .
+      - run: /bin/bash .ci/install-vcpkg.sh "$GITHUB_WORKSPACE"
+      - run: /bin/bash .ci/build-project.sh
 
   linux-clang:
     name: Linux Clang
@@ -60,18 +40,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt-get install -y ninja-build libc++-9-dev libc++abi-9-dev
-      - name: Install Vcpkg
-        run: |
-          cd $HOME
-          git clone --depth 1 https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh --disableMetrics
-          ./vcpkg install $(< $GITHUB_WORKSPACE/.vcpkg)
-      - name: Build Project
-        run: |
-          mkdir build && cd build
-          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake ..
-          cmake --build .
+      - run: /bin/bash .ci/install-vcpkg.sh "$GITHUB_WORKSPACE"
+      - run: /bin/bash .ci/build-project.sh
 
   linux-gcc:
     name: Linux GCC
@@ -82,37 +52,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt-get install -y ninja-build
-      - name: Install Vcpkg
-        run: |
-          cd $HOME
-          git clone --depth 1 https://github.com/Microsoft/vcpkg.git
-          cd vcpkg
-          ./bootstrap-vcpkg.sh --disableMetrics
-          ./vcpkg install $(< $GITHUB_WORKSPACE/.vcpkg)
-      - name: Build Project
-        run: |
-          mkdir build && cd build
-          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake ..
-          cmake --build .
+      - run: /bin/bash .ci/install-vcpkg.sh "$GITHUB_WORKSPACE"
+      - run: /bin/bash .ci/build-project.sh
 
   windows-msvc:
     name: Windows MSVC
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Vcpkg
-        run: |
-          cd $HOME
-          New-Alias -Name git -Value "$Env:ProgramFiles\Git\bin\git.exe"
-          git clone --quiet --depth 1 https://github.com/Microsoft/vcpkg.git vcpkg
-          cd vcpkg
-          .\bootstrap-vcpkg.bat -disableMetrics
-          $packages = Get-Content "$Env:GITHUB_WORKSPACE\.vcpkg"
-          .\vcpkg install --triplet x64-windows $packages
-      - name: Build Project
-        run: |
-          New-Alias -Name cmake -Value "$Env:ProgramFiles\CMake\bin\cmake.exe"
-          mkdir build
-          cd build
-          cmake -DCMAKE_BUILD_TYPE=Release -DVCPKG_TARGET_TRIPLET=x64-windows -DCMAKE_TOOLCHAIN_FILE="$HOME\vcpkg\scripts\buildsystems\vcpkg.cmake" ..
-          cmake --build . --config Release
+      - run: .ci\install-vcpkg.ps1 "$Env:GITHUB_WORKSPACE"
+      - run: .ci\build-project.ps1
