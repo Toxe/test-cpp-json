@@ -13,6 +13,7 @@ namespace Example {
         std::string ship_class;
         std::vector<std::string> roles;
         int length;
+        int crew;
     };
 
     void to_json(nlohmann::json& j, const Ship& ship)
@@ -24,7 +25,8 @@ namespace Example {
             {"model", ship.model},
             {"ship_class", ship.ship_class},
             {"roles", ship.roles},
-            {"length", ship.length}};
+            {"length", ship.length},
+            {"crew", ship.crew}};
     }
 
     void from_json(const nlohmann::json& j, Ship& ship)
@@ -36,6 +38,7 @@ namespace Example {
         j.at("ship_class").get_to(ship.ship_class);
         j.at("roles").get_to(ship.roles);
         j.at("length").get_to(ship.length);
+        j.at("crew").get_to(ship.crew);
     }
 } // namespace Example
 
@@ -54,6 +57,7 @@ int main()
                   << ship.affiliation << ", "
                   << ship.manufacturer << ", "
                   << ship.model << ", "
-                  << ship.length << '\n';
+                  << ship.length << ", "
+                  << ship.crew << '\n';
     }
 }

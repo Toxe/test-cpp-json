@@ -15,6 +15,7 @@ int main()
                   << ship["affiliation"].get<std::string>() << ", "
                   << ship["manufacturer"].get<std::string>() << ", "
                   << ship["model"].get<std::string>() << ", "
-                  << ship["length"].get<int>() << '\n';
+                  << ship["length"].get<int>() << ", "
+                  << ship["crew"].get<int>() << '\n';
     }
 }
